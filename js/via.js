@@ -15,11 +15,11 @@ function _via(via_container) {
   console.log('Initializing VGG Image Annotator (VIA) version ' + _VIA_VERSION)
   this.via_container = via_container;
 
-  this.d  = new _via_data();
+  this.d = new _via_data();
   var conf = { 'ENDPOINT': _VIA_REMOTE_STORE };
-  this.s  = new _via_share(this.d, conf);
+  this.s = new _via_share(this.d, conf);
 
-  if ( typeof(_VIA_DEBUG) === 'undefined' || _VIA_DEBUG === true ) {
+  if (typeof (_VIA_DEBUG) === 'undefined' || _VIA_DEBUG === true) {
     // ADD DEBUG CODE HERE (IF NEEDED)
   }
 
@@ -61,14 +61,14 @@ function _via(via_container) {
   this.cp._set_region_shape('RECTANGLE');
 
   // event handlers for buttons in the control panel
-  this.cp.on_event('region_shape', this._ID, function(data, event_payload) {
+  this.cp.on_event('region_shape', this._ID, function (data, event_payload) {
     this.va.set_region_draw_shape(event_payload.shape);
   }.bind(this));
-  this.cp.on_event('editor_toggle', this._ID, function(data, event_payload) {
+  this.cp.on_event('editor_toggle', this._ID, function (data, event_payload) {
     this.editor.toggle();
   }.bind(this));
-  this.cp.on_event('zoom_toggle', this._ID, function(data, event_payload) {
-    if(this.va.view_mode === _VIA_VIEW_MODE.IMAGE1) {
+  this.cp.on_event('zoom_toggle', this._ID, function (data, event_payload) {
+    if (this.va.view_mode === _VIA_VIEW_MODE.IMAGE1) {
       this.va.file_annotator[0][0]._zoom_toggle();
     }
   }.bind(this));
@@ -82,8 +82,8 @@ function _via(via_container) {
   var el = document.getElementById('via_page_container');
   var pages = el.getElementsByClassName('via_page');
   var n = pages.length;
-  for ( var i = 0; i < n; ++i ) {
-    if ( pages[i].dataset.pageid === 'page_about' ) {
+  for (var i = 0; i < n; ++i) {
+    if (pages[i].dataset.pageid === 'page_about') {
       var content0 = pages[i].innerHTML;
       pages[i].innerHTML = content0.replace('__VIA_VERSION__', _VIA_VERSION);
     }
@@ -93,22 +93,22 @@ function _via(via_container) {
   // function _via_load_submodules()
   if (typeof _via_load_submodules === 'function') {
     console.log('VIA submodule detected, invoking _via_load_submodules()');
-    this._load_submodule = new Promise( function(ok_callback, err_callback) {
+    this._load_submodule = new Promise(function (ok_callback, err_callback) {
       try {
         _via_load_submodules.call(this);
       }
-      catch(err) {
+      catch (err) {
         console.warn('VIA submodule load failed: ' + err);
         err_callback(err);
       }
     }.bind(this));
   } else {
     // debug code (disabled for release)
-    if ( typeof(_VIA_DEBUG) === 'undefined' || _VIA_DEBUG === true ) {
+    if (typeof (_VIA_DEBUG) === 'undefined' || _VIA_DEBUG === true) {
       //this.s.pull(''); // load shared project
       //this.d.project_load_json(_via_dp[2]['store']); // video
       //this.d.project_load_json(_via_dp[1]['store']); // audio
-      //this.d.project_load_json(_via_dp[4]['store']); // image
+      //this.d.project_load_json(_via_dp[4]['store']); // imagedd
       //this.d.project_load_json(_via_dp[3]['store']); // pair
 
       /*
@@ -126,17 +126,17 @@ function _via(via_container) {
   _via_util_msg_show(_VIA_NAME + ' (' + _VIA_NAME_SHORT + ') ' + _VIA_VERSION + ' ready.');
 }
 
-_via.prototype._hook_on_browser_resize = function() {
-  if ( typeof(this.va.vid) !== 'undefined' ) {
+_via.prototype._hook_on_browser_resize = function () {
+  if (typeof (this.va.vid) !== 'undefined') {
     this.va.view_show(this.va.vid);
   }
 }
 
-_via.prototype._keydown_handler = function(e) {
+_via.prototype._keydown_handler = function (e) {
   // avoid handling events when text input field is in focus
-  if ( e.target.type !== 'text' &&
-       e.target.type !== 'textarea'
-     ) {
+  if (e.target.type !== 'text' &&
+    e.target.type !== 'textarea'
+  ) {
     this.va._on_event_keydown(e);
   }
 }
