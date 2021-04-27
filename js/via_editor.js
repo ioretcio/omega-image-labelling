@@ -294,13 +294,13 @@ _via_editor.prototype.get_attribute_header = function () {
   var tr = document.createElement('tr');
   tr.appendChild(this.html_element('th', ''));
   tr.appendChild(this.html_element('th', 'Id'));
-  tr.appendChild(this.html_element('th', 'Name'));
-  tr.appendChild(this.html_element('th', 'Anchor'));
-  tr.appendChild(this.html_element('th', 'Input Type'));
-  tr.appendChild(this.html_element('th', 'Description'));
-  tr.appendChild(this.html_element('th', 'Options'));
-  tr.appendChild(this.html_element('th', 'Default Value'));
-  tr.appendChild(this.html_element('th', 'Preview'));
+  tr.appendChild(this.html_element('th', "Ім`я"));
+  tr.appendChild(this.html_element('th', "Тип прив'язки"));
+  tr.appendChild(this.html_element('th', 'Тип введення'));
+  tr.appendChild(this.html_element('th', 'Опис'));
+  tr.appendChild(this.html_element('th', 'Опції'));
+  tr.appendChild(this.html_element('th', 'По замовчуванню'));
+  tr.appendChild(this.html_element('th', 'Передогляд'));
 
   var thead = document.createElement('thead');
   thead.appendChild(tr);
