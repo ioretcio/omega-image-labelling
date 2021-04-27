@@ -40,7 +40,7 @@ _via_control_panel.prototype._init = function (type) {
 
   this._add_spacer();
 
-  var editor = _via_util_get_svg_button('micon_insertcomment', 'Show/Hide Attribute Editor');
+  var editor = _via_util_get_svg_button('micon_insertcomment', 'Редактор міток');
   editor.addEventListener('click', function () {
     this.emit_event('editor_toggle', {});
   }.bind(this));
@@ -49,7 +49,7 @@ _via_control_panel.prototype._init = function (type) {
   this._add_spacer();
 
   if (document.getElementById('micon_zoomin')) {
-    var zoom = _via_util_get_svg_button('micon_zoomin', 'Enable/disable magnifying glass to inspect finer details');
+    var zoom = _via_util_get_svg_button('micon_zoomin', 'Приближення');
     zoom.addEventListener('click', function () {
       this.emit_event('zoom_toggle', {});
     }.bind(this));
