@@ -108,6 +108,7 @@ _via_control_panel.prototype._add_region_shape_selector = function () {
   }.bind(this));
   this.c.appendChild(extreme_rect);
 
+
   // var circle = _via_util_get_svg_button('shape_circle', 'Circle', 'CIRCLE');
   // circle.addEventListener('click', function() {
   //   this._set_region_shape('CIRCLE');
