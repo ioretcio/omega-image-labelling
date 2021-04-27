@@ -61,7 +61,7 @@ _via_control_panel.prototype._init = function (type) {
 
   this._add_spacer();
 
-  var keyboard = _via_util_get_svg_button('micon_keyboard', 'Keyboard Shortcuts');
+  var keyboard = _via_util_get_svg_button('micon_keyboard', 'Гарячі клавіші');
   keyboard.addEventListener('click', function () {
     _via_util_page_show('page_keyboard_shortcut');
   }.bind(this));
