@@ -24,7 +24,7 @@ _via_control_panel.prototype._init = function (type) {
 
   var logo_panel = document.createElement('div');
   logo_panel.setAttribute('class', 'logo');
-  logo_panel.innerHTML = '<a href="http://www.robots.ox.ac.uk/~vgg/software/via/" title="VGG Image Annotator (VIA)" target="_blank">VIA</a>'
+  logo_panel.innerHTML = '<a href="http://www.robots.ox.ac.uk/~vgg/software/via/" title="VGG Image Annotator (VIA)" target="_blank">OMEGA</a>'
   this.c.appendChild(logo_panel);
 
   this.c.appendChild(this.via.vm.c);
